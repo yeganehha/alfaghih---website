@@ -56,6 +56,15 @@ class DatabaseSeeder extends Seeder
              'icon' => 'kt-menu__link-icon flaticon-email',
              'order' => 100
          ]);
+         \App\Models\Menu::factory()->create([
+             'title' => 'News',
+             'type' => 'admin_sidebar',
+             'route' => [
+                 'route_name' => "admin:newspaper.index"
+             ],
+             'icon' => 'kt-menu__link-icon fa fa-newspaper',
+             'order' => 200
+         ]);
         \App\Models\Menu::factory()->create([
             'title' => 'Setting',
             'parent_id' => 2,

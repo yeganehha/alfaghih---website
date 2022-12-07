@@ -20,7 +20,14 @@
 
 <link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
+<style>
+    .tox .tox-promotion {
+        display: none !important;
+    }
+    .tox .tox-statusbar__branding{
+        display: none !important;
+    }
+</style>
 @yield('styles')
 @yield('css')
 @livewireStyles

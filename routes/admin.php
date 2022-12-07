@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\ContactusController;
+use App\Http\Controllers\Admin\NewspaperController;
 use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,3 +27,5 @@ Route::get('contactus' , [ContactusController::class , 'index'] )->name('contact
 Route::get('contactus/{contactus}' , [ContactusController::class , 'show'] )->name('contactus.show');
 
 Route::resource('admins' , AdminController::class )->except('show' , 'distro');
+
+Route::resource('newspaper' , NewspaperController::class )->except('show' , 'distro');
