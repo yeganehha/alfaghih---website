@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\Facades\Route;
 
@@ -31,10 +32,32 @@ class RouteServiceProvider extends ServiceProvider
         $this->routes(function () {
             Route::middleware('api')
                 ->prefix('api')
+                ->namespace('Api')
                 ->group(base_path('routes/api.php'));
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            Route::middleware(['web' ,'auth:admin', 'admin'])
+                ->prefix('gwc')
+                ->namespace('admin')
+                ->group(base_path('routes/admin.php'));
+
+            Route::middleware(['web', 'admin' ])
+                ->prefix('gwc')
+                ->namespace('App\Http\Controllers\Admin')
+                ->group(function (){
+                    // Authentication Routes...
+                    $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
+                    $this->post('login', 'Auth\LoginController@login');
+                    $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+                    // Password Reset Routes...
+                    $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+                    $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+                    $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
+                    $this->post('password/reset', 'Auth\ResetPasswordController@reset');
+                });
         });
     }
 
