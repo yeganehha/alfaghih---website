@@ -47,7 +47,7 @@
 
                     <!--begin: Navigation -->
                     <div class="kt-notification">
-                        <a href="#" class="kt-notification__item">
+                        <a href="{{ route('admin:admins.edit' , [auth('admin')->id()]) }}" class="kt-notification__item">
                             <div class="kt-notification__item-icon">
                                 <i class="flaticon2-calendar-3 kt-font-success"></i>
                             </div>
@@ -57,7 +57,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="#" class="kt-notification__item">
+                        <a href="{{ route('admin:admins.edit' , [auth('admin')->id()]) }}" class="kt-notification__item">
                             <div class="kt-notification__item-icon">
                                 <i class="flaticon2-lock kt-font-warning"></i>
                             </div>
@@ -99,10 +99,8 @@
                         <span class="kt-subheader__breadcrumbs-separator"></span>
                         <a href="{{ route('admin:dashboard') }}" class="kt-subheader__breadcrumbs-link">
                             {{ trans('dashboard')  }} </a>
-                        @if ( isset($autoCRUD) )
-                        <span class="kt-subheader__breadcrumbs-separator"></span>
-                        <a href="{{ route($currentRoute.'.index') }}" class="kt-subheader__breadcrumbs-link">
-                            @yield('title') </a>
+                        @hasSection('subheader')
+                            @yield('subheader')
                         @endif
 {{--                        <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span>--}}
                     </div>

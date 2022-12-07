@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin\Admin;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -13,7 +13,7 @@ class UpdateAdminRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,8 +23,12 @@ class UpdateAdminRequest extends FormRequest
      */
     public function rules()
     {
+        $id = $this->route('admin') ? $this->route('admin')->id : null;
         return [
-            //
+            'name' => 'required',
+            'email' => 'required|email|unique:admins,email,'.$id,
+            'username' => 'required|unique:admins,username,'.$id,
+            'password' => 'nullable|confirmed|min:3',
         ];
     }
 }

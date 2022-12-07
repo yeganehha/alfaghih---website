@@ -20,4 +20,4 @@ Route::get('/', function () {
 
 Route::apiResource('setting' , SettingController::class )->only('index','store');
 
-Route::resource('admins' , AdminController::class );
+Route::resource('admins' , AdminController::class )->except('show' , 'distro');
