@@ -7,6 +7,13 @@
 <script src="{{ asset('vendor/file-manager/js/file-manager.js') }}"></script>
 <!--end::Global Theme Bundle -->
 
+
+<script>
+    function fmSetLink($url) {
+        $(fmIdSetLink).val ($url) ;
+    }
+</script>
+
 @yield('javascript')
 @yield('js')
 @livewireScripts

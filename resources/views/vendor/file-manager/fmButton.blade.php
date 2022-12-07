@@ -17,7 +17,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-md-12" id="fm-main-block">
-            <div id="fm"></div>
+            <div id="fm"  style="height: 100%"></div>
         </div>
     </div>
 </div>

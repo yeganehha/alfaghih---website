@@ -19,7 +19,7 @@
                     <div class="kt-login__container">
                         <div class="kt-login__logo">
                             <a href="{{ asset('') }}">
-                                <img src="{{ asset('admin-assets/media/logos/logo-mini-2-md.png') }}">
+                                <img src="{{ setting('logo.light') }}">
                             </a>
                         </div>
                         <div class="kt-login__signin">
