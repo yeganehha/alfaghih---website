@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 class Menu extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'parent_id',
         'title',
@@ -32,14 +35,14 @@ class Menu extends Model
     public $timestamps = false;
 
     public static function generate($type , $parent_id = null ) {
-        return cache()->remember('menu_of_' .$type.'_'.$parent_id , 15 * 60 , function ()  use($type,$parent_id) {
+        //return cache()->remember('menu_of_' .$type.'_'.$parent_id , 15 * 60 , function ()  use($type,$parent_id) {
             return self::query()
                 ->where('type' , $type)
                 ->where('parent_id' , $parent_id)
                 ->orderBy('order' , 'desc')
                 ->with(str_repeat('child.' , 4 ).'child')
                 ->get();
-        });
+        //});
     }
 
     public function child(){

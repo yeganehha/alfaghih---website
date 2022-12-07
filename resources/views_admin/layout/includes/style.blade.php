@@ -18,5 +18,9 @@
 <link href="{{ asset('admin-assets/css/skins/aside/dark.css') }}" rel="stylesheet" type="text/css" />
 <!--end::Layout Skins -->
 
+<link rel="stylesheet" href="{{ asset('vendor/file-manager/css/file-manager.css') }}">
+<script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 @yield('styles')
 @yield('css')
+@livewireStyles

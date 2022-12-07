@@ -20,10 +20,43 @@ class DatabaseSeeder extends Seeder
          \App\Models\Admin::factory()->create([
              'name' => 'Test Admin',
              'username' => 'admin',
-             'email' => 'persionhost@gmail.com',
+             'email' => 'customers@gulfclick.net',
              'email_verified_at' => now(),
-             'password' => bcrypt('12345678'),
+             'password' => bcrypt('admin'),
              'remember_token' => Str::random(10),
          ]);
+         \App\Models\Menu::factory()->create([
+             'title' => 'Dashboard',
+             'route' => [
+                 'route_name' => "admin:dashboard"
+             ],
+             'type' => 'admin_sidebar',
+             'icon' => 'kt-menu__link-icon flaticon-home',
+             'order' => 999999
+         ]);
+         \App\Models\Menu::factory()->create([
+             'title' => 'Setting',
+             'type' => 'admin_sidebar',
+             'icon' => 'kt-menu__link-icon flaticon2-gear',
+             'order' => 10
+         ]);
+        \App\Models\Menu::factory()->create([
+            'title' => 'Setting',
+            'parent_id' => 2,
+            'route' => [
+                'route_name' => "admin:setting.index"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 999999
+        ]);
+        \App\Models\Menu::factory()->create([
+            'title' => 'Admins',
+            'parent_id' => 2,
+            'route' => [
+                'route_name' => "admin:admins.index"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 999998
+        ]);
     }
 }
