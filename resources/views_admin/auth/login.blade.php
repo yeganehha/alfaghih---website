@@ -1,73 +1,81 @@
-@extends('layouts.app')
+@extends('layout.auth')
+
+@section('title' , trans('login') )
+
+@section('css')
+    <link href="{{ asset('admin-assets/css/pages/login/login-2.css') }}" rel="stylesheet" type="text/css" />
+@endsection
+
+@section('js')
+    <script src="{{ asset('admin-assets/js/pages/custom/login/login-general.js') }}" type="text/javascript"></script>
+@endsection
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
+    <!-- begin:: Page -->
+    <div class="kt-grid kt-grid--ver kt-grid--root">
+        <div class="kt-grid kt-grid--hor kt-grid--root kt-login kt-login--v2 kt-login--signin" id="kt_login">
+            <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" style="background-image: url({{ asset('admin-assets/media/bg/bg-1.jpg') }});">
+                <div class="kt-grid__item kt-grid__item--fluid kt-login__wrapper">
+                    <div class="kt-login__container">
+                        <div class="kt-login__logo">
+                            <a href="{{ asset('') }}">
+                                <img src="{{ asset('admin-assets/media/logos/logo-mini-2-md.png') }}">
+                            </a>
                         </div>
-
-                        <div class="row mb-3">
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
+                        <div class="kt-login__signin">
+                            <div class="kt-login__head">
+                                <h3 class="kt-login__title">{{ trans('signInToAdmin') }}</h3>
                             </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
+                            <form class="kt-form" method="POST" action="{{ route('admin:auth.login.process') }}">
+                                @if($errors->any())
+                                    <div class="alert alert-danger alert-dismissible" role="alert">
+                                        {!!  implode('', $errors->all('<div class="alert-text">:message</div><div class="alert-close"><i class="flaticon2-cross kt-icon-sm" data-dismiss="alert"></i></div>')) !!}
+                                    </div>
                                 @endif
-                            </div>
+                                @csrf
+                                <div class="input-group">
+                                    <input class="form-control" type="text" placeholder="{{ trans('username') }}" name="username" autocomplete="off">
+                                </div>
+                                <div class="input-group">
+                                    <input class="form-control" type="password" placeholder="{{ trans('Password') }}" name="password">
+                                </div>
+                                <div class="row kt-login__extra">
+                                    <div class="col">
+                                        <label class="kt-checkbox">
+                                            <input type="checkbox" name="remember"> {{ trans('RememberMe') }}
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                    <div class="col kt-align-right">
+                                        <a href="javascript:;" id="kt_login_forgot" class="kt-link kt-login__link">{{ trans('ForgetPassword') }}</a>
+                                    </div>
+                                </div>
+                                <div class="kt-login__actions">
+                                    <button type="submit" class="btn btn-pill kt-login__btn-primary">{{ trans('login') }}</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                        <div class="kt-login__forgot">
+                            <div class="kt-login__head">
+                                <h3 class="kt-login__title">{{ trans('ForgetPassword') }}</h3>
+                                <div class="kt-login__desc">{{ trans('ForgetPasswordDescription') }}</div>
+                            </div>
+                            <form class="kt-form" method="POST" action="{{ route('admin:auth.forgot.process') }}">
+                                @csrf
+                                <div class="input-group">
+                                    <input class="form-control" type="email" placeholder="{{ trans('Email') }}" name="email" id="kt_email" autocomplete="off">
+                                </div>
+                                <div class="kt-login__actions">
+                                    <button type="submit" class="btn btn-pill kt-login__btn-primary">{{ trans('Request') }}</button>&nbsp;&nbsp;
+                                    <button id="kt_login_forgot_cancel" class="btn btn-pill kt-login__btn-secondary">{{ trans('Cancel') }}</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- end:: Page -->
 @endsection

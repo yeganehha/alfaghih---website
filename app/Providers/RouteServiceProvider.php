@@ -40,21 +40,22 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware(['web' ,'auth:admin', 'admin'])
                 ->prefix('gwc')
-                ->namespace('admin')
+                ->as('admin:')
                 ->group(base_path('routes/admin.php'));
 
             Route::middleware(['web', 'admin' ])
                 ->prefix('gwc')
+                ->as('admin:')
                 ->namespace('App\Http\Controllers\Admin')
                 ->group(function (){
                     // Authentication Routes...
-                    $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
-                    $this->post('login', 'Auth\LoginController@login');
-                    $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+                    $this->get('login', 'Auth\LoginController@showLoginForm')->name('auth.login');
+                    $this->post('login', 'Auth\LoginController@login')->name('auth.login.process');
+                    $this->get('logout', 'Auth\LoginController@logout')->name('auth.logout');
 
                     // Password Reset Routes...
                     $this->get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
-                    $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+                    $this->post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('auth.forgot.process');
                     $this->get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm');
                     $this->post('password/reset', 'Auth\ResetPasswordController@reset');
                 });

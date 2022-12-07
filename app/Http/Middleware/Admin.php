@@ -17,7 +17,8 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        View::addLocation(resource_path('views_admin'));
+        View::getFinder()
+            ->setPaths([resource_path('views_admin')]);
         return $next($request);
     }
 }
