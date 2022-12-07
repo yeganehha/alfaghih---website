@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Contactus;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
 
@@ -39,6 +40,21 @@ class DatabaseSeeder extends Seeder
              'type' => 'admin_sidebar',
              'icon' => 'kt-menu__link-icon flaticon2-gear',
              'order' => 10
+         ]);
+         \App\Models\Menu::factory()->create([
+             'title' => 'Contact Us',
+             'type' => 'admin_sidebar',
+             'route' => [
+                 'route_name' => "admin:contactus.index"
+             ],
+             'customData' => [
+                 'counter' => [
+                     "class" => Contactus::class,
+                     "method" => "unRead"
+                 ]
+             ],
+             'icon' => 'kt-menu__link-icon flaticon-email',
+             'order' => 100
          ]);
         \App\Models\Menu::factory()->create([
             'title' => 'Setting',

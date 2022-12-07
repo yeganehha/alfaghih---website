@@ -61,6 +61,13 @@
                                     <a @if ( $menu->child->count() ) href="javascript:;" @elseif(! is_null($menu->route)) href="{{ route($menu->route['route_name'] , \Illuminate\Support\Arr::except($menu->route,'route_name')) }}" @else href="{{ $menu->link }}" @endif class="kt-menu__link  @if ( $menu->child->count() ) kt-menu__toggle @endif">
                                         <i class="{{$menu->icon}}"></i>
                                         <span class="kt-menu__link-text">{{$menu->title}}</span>
+                                        @if ( isset($menu->customData['counter'] , $menu->customData['counter']['class'], $menu->customData['counter']['method']) )
+                                           @if ( class_exists($menu->customData['counter']['class']) and method_exists($menu->customData['counter']['class'] , $menu->customData['counter']['method']) )
+                                                @if ( ( $numberOFCounterInMenu = (new ($menu->customData['counter']['class'])() )->{$menu->customData['counter']['method']}() ) > 0 )
+                                                    <span class="badge badge-info right h-100">{{ $numberOFCounterInMenu }}</span>
+                                                @endif
+                                            @endif
+                                        @endif
                                         @if ( $menu->child->count() ) <i class="kt-menu__ver-arrow la la-angle-right"></i> @endif
                                     </a>
                                     @if ( $menu->child->count() )
