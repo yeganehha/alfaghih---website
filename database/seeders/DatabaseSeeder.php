@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Comment;
 use App\Models\Contactus;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
@@ -63,8 +64,23 @@ class DatabaseSeeder extends Seeder
                  'route_name' => "admin:newspaper.index"
              ],
              'icon' => 'kt-menu__link-icon fa fa-newspaper',
-             'order' => 200
+             'order' => 300
          ]);
+        \App\Models\Menu::factory()->create([
+            'title' => 'Comments',
+            'type' => 'admin_sidebar',
+            'route' => [
+                'route_name' => "admin:comments.index"
+            ],
+            'customData' => [
+                'counter' => [
+                    "class" => Comment::class,
+                    "method" => "unRead"
+                ]
+            ],
+            'icon' => 'kt-menu__link-icon fa fa-comments',
+            'order' => 200
+        ]);
         \App\Models\Menu::factory()->create([
             'title' => 'Setting',
             'parent_id' => 2,

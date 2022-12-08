@@ -31,4 +31,8 @@ class Newspaper extends Model
     ];
 
 
+    public function comments(): \Illuminate\Database\Eloquent\Relations\MorphToMany
+    {
+        return $this->morphToMany(Comment::class, 'commentable');
+    }
 }
