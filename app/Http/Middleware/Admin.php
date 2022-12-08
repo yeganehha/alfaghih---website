@@ -17,7 +17,7 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if ( ! $request->user('admin')->is_active )
+        if ( $request->user('admin') != null and ! $request->user('admin')->is_active )
             abort(403);
         View::getFinder()
             ->setPaths([resource_path('views_admin')]);
