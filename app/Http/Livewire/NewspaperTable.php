@@ -61,7 +61,9 @@ class NewspaperTable extends DataTableComponent
                 ->sortable(),
             BooleanColumn::make("Active", "is_active")
                 ->sortable(),
-            ImageColumn::make("Image")->location(fn($row) => (Newspaper::find($row->id))->image )
+            Column::make("Active", "image")
+                ->hideIf(true),
+            ImageColumn::make("Image")->location(fn($row) => $row->image )
                 ->attributes(fn($row) => [
                     'style' => 'max-width:100px;',
                 ]),
