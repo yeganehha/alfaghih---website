@@ -24,10 +24,10 @@
                             @if(  $contactus->email )
                                 <a href="mailto:{{ $contactus->email }}"><i class="flaticon2-new-email"></i>{{ $contactus->email }}</a>
                             @endif
-                            @if(  $contactus->email )
+                            @if(  $contactus->mobile )
                                 <a href="tel:{{ $contactus->mobile }}"><i class="flaticon2-new-phone"></i>{{ $contactus->mobile }}</a>
                             @endif
-                            @if(  $contactus->email )
+                            @if(  $contactus->subject )
                                 <a href="#"><i class="flaticon2-new-edit"></i>{{ $contactus->subject }}</a>
                             @endif
                             <a href="#"><i class="flaticon2-time"></i>{{ $contactus->created_at }}</a>
