@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\CommentController;
 use App\Http\Controllers\Admin\ContactusController;
 use App\Http\Controllers\Admin\NewspaperController;
+use App\Http\Controllers\Admin\PartnerController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\SettingController;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,4 @@ Route::resource('newspaper' , NewspaperController::class )->except('show' , 'des
 
 Route::resource('services' , ServiceController::class )->except('show' , 'destroy');
 Route::resource('clients' , ClientController::class )->except('show' , 'destroy');
+Route::resource('partners' , PartnerController::class )->except('show' , 'destroy');

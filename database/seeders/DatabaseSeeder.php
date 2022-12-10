@@ -125,5 +125,14 @@ class DatabaseSeeder extends Seeder
             'type' => 'admin_sidebar',
             'order' => 400
         ]);
+        \App\Models\Menu::factory()->create([
+            'title' => 'Our Partners',
+            'parent_id' => 3,
+            'route' => [
+                'route_name' => "admin:partners.index"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 300
+        ]);
     }
 }
