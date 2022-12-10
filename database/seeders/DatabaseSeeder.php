@@ -45,7 +45,7 @@ class DatabaseSeeder extends Seeder
          \App\Models\Menu::factory()->create([
              'title' => 'About us',
              'type' => 'admin_sidebar',
-             'icon' => 'fa fa-business-time',
+             'icon' => 'kt-menu__link-icon fa fa-business-time',
              'order' => 400
          ]);
 
@@ -133,6 +133,15 @@ class DatabaseSeeder extends Seeder
             ],
             'type' => 'admin_sidebar',
             'order' => 300
+        ]);
+        \App\Models\Menu::factory()->create([
+            'title' => 'About us',
+            'parent_id' => 3,
+            'route' => [
+                'route_name' => "admin:about_us"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 200
         ]);
         \App\Models\Menu::factory()->create([
             'title' => 'Team Member',

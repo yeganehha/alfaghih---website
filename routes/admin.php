@@ -38,3 +38,5 @@ Route::resource('services' , ServiceController::class )->except('show' , 'destro
 Route::resource('clients' , ClientController::class )->except('show' , 'destroy');
 Route::resource('partners' , PartnerController::class )->except('show' , 'destroy');
 Route::resource('teams' , TeamController::class )->except('show' , 'destroy');
+Route::get('about_us' , [SettingController::class , 'aboutUs'])->name('about_us');
+Route::POST('about_us' , [SettingController::class , 'storeAboutUs'] )->name('about_us.store');
