@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Service\StoreServiceRequest;
-use App\Http\Requests\Service\UpdateServiceRequest;
+use App\Http\Requests\Admin\Service\StoreServiceRequest;
+use App\Http\Requests\Admin\Service\UpdateServiceRequest;
 use App\Models\Service;
 
 class ServiceController extends Controller
@@ -39,7 +39,7 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Service\StoreServiceRequest  $request
+     * @param  \App\Http\Requests\Admin\Service\StoreServiceRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreServiceRequest $request)
@@ -66,7 +66,7 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Service\UpdateServiceRequest  $request
+     * @param  \App\Http\Requests\Admin\Service\UpdateServiceRequest  $request
      * @param  \App\Models\Service  $service
      * @return \Illuminate\Http\RedirectResponse
      */

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Team\StoreTeamRequest;
-use App\Http\Requests\Team\UpdateTeamRequest;
+use App\Http\Requests\Admin\Team\StoreTeamRequest;
+use App\Http\Requests\Admin\Team\UpdateTeamRequest;
 use App\Models\Team;
 
 class TeamController extends Controller
@@ -39,7 +39,7 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Team\StoreTeamRequest  $request
+     * @param  \App\Http\Requests\Admin\Team\StoreTeamRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreTeamRequest $request)
@@ -66,7 +66,7 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Team\UpdateTeamRequest  $request
+     * @param  \App\Http\Requests\Admin\Team\UpdateTeamRequest  $request
      * @param  \App\Models\Team  $team
      * @return \Illuminate\Http\RedirectResponse
      */

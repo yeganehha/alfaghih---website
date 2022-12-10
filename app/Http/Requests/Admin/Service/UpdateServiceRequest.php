@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Partner;
+namespace App\Http\Requests\Admin\Service;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StorePartnerRequest extends FormRequest
+class UpdateServiceRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class StorePartnerRequest extends FormRequest
     {
         return [
             'name.*' => ['required' , 'string'],
-            'image' => ['required' , 'url'],
+            'description.*' => ['required' , 'string'],
             'order' => ['nullable' , 'numeric']
         ];
     }

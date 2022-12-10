@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Client\StoreClientRequest;
-use App\Http\Requests\Client\UpdateClientRequest;
+use App\Http\Requests\Admin\Client\StoreClientRequest;
+use App\Http\Requests\Admin\Client\UpdateClientRequest;
 use App\Models\Client;
 use App\Models\Newspaper;
 
@@ -40,7 +40,7 @@ class ClientController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Client\StoreClientRequest  $request
+     * @param  \App\Http\Requests\Admin\Client\StoreClientRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreClientRequest $request)
@@ -67,7 +67,7 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Client\UpdateClientRequest  $request
+     * @param  \App\Http\Requests\Admin\Client\UpdateClientRequest  $request
      * @param  \App\Models\Client  $client
      * @return \Illuminate\Http\RedirectResponse
      */

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Partner\StorePartnerRequest;
-use App\Http\Requests\Partner\UpdatePartnerRequest;
+use App\Http\Requests\Admin\Partner\StorePartnerRequest;
+use App\Http\Requests\Admin\Partner\UpdatePartnerRequest;
 use App\Models\Partner;
 
 class PartnerController extends Controller
@@ -39,7 +39,7 @@ class PartnerController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Partner\StorePartnerRequest  $request
+     * @param  \App\Http\Requests\Admin\Partner\StorePartnerRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StorePartnerRequest $request)
@@ -66,7 +66,7 @@ class PartnerController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Partner\UpdatePartnerRequest  $request
+     * @param  \App\Http\Requests\Admin\Partner\UpdatePartnerRequest  $request
      * @param  \App\Models\Partner  $partner
      * @return \Illuminate\Http\RedirectResponse
      */

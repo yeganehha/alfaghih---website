@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Service;
+namespace App\Http\Requests\Admin\Newspaper;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UpdateServiceRequest extends FormRequest
+class StoreNewspaperRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,9 +24,12 @@ class UpdateServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'name.*' => ['required' , 'string'],
-            'description.*' => ['required' , 'string'],
-            'order' => ['nullable' , 'numeric']
+            'name.*' => [ 'required' , 'max:255'],
+            'image' => [ 'required', 'max:255'],
+            'content_ar' => [ 'required'],
+            'content_en' => [ 'required'],
+            'truncate.*' => ['required' , 'max:255'],
+            'tags' => ['array' , 'nullable'],
         ];
     }
 }
