@@ -116,5 +116,14 @@ class DatabaseSeeder extends Seeder
             'type' => 'admin_sidebar',
             'order' => 500
         ]);
+        \App\Models\Menu::factory()->create([
+            'title' => 'Our Clients',
+            'parent_id' => 3,
+            'route' => [
+                'route_name' => "admin:clients.index"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 400
+        ]);
     }
 }
