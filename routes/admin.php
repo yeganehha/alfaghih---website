@@ -18,9 +18,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::redirect('/' ,'/gwc/dashboard')->name('dashboard');
 
 Route::apiResource('setting' , SettingController::class )->only('index','store');
 
