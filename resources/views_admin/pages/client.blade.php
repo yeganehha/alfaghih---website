@@ -27,7 +27,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Name (Ar) *</label>
-                                <input type="text" name="name[ar]" class="form-control @if($errors->has('name.ar')) is-invalid @endif"
+                                <input type="text" dir="rtl" name="name[ar]" class="form-control @if($errors->has('name.ar')) is-invalid @endif"
                                        value="{{ old('name.ar' , $object->getTranslation('name' , 'ar') ) }}">
                             </div>
                             <div class="col-md-4 mt-2">

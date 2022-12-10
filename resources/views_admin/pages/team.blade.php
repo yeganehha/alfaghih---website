@@ -27,7 +27,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Name (Ar) *</label>
-                                <input type="text" name="name[ar]" class="form-control @if($errors->has('name.ar')) is-invalid @endif"
+                                <input type="text" dir="rtl" name="name[ar]" class="form-control @if($errors->has('name.ar')) is-invalid @endif"
                                        value="{{ old('name.ar' , $object->getTranslation('name' , 'ar') ) }}">
                             </div>
                             <div class="col-md-6 mt-2">
@@ -37,7 +37,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Position (Ar) *</label>
-                                <input type="text" name="position[ar]" class="form-control @if($errors->has('position.ar')) is-invalid @endif"
+                                <input type="text" dir="rtl" name="position[ar]" class="form-control @if($errors->has('position.ar')) is-invalid @endif"
                                        value="{{ old('position.ar' , $object->getTranslation('position' , 'ar') ) }}">
                             </div>
                             <div class="col-md-6 mt-2">
@@ -46,7 +46,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Description (Ar) *</label>
-                                <textarea rows="5" name="description[ar]" class="form-control @if($errors->has('description.ar')) is-invalid @endif">{{ old('description.ar' , $object->getTranslation('description' , 'ar') ) }}</textarea>
+                                <textarea rows="5" dir="rtl" name="description[ar]" class="form-control @if($errors->has('description.ar')) is-invalid @endif">{{ old('description.ar' , $object->getTranslation('description' , 'ar') ) }}</textarea>
                             </div>
 {{--                            <div class="col-md-6 mt-2">--}}
 {{--                                <label class="form-label">Content (En) *</label>--}}

@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Website Name (Ar)</label>
-                                        <input type="text" name="name[ar]" value="{{ old('name.ar' , setting('name.ar') ) }}"
+                                        <input type="text" dir="rtl" name="name[ar]" value="{{ old('name.ar' , setting('name.ar') ) }}"
                                                class="form-control @if($errors->has('name.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-9 mt-2">
@@ -91,7 +91,7 @@
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">SEO Keyword (Ar)</label>
-                                        <input type="text" name="keyword[ar]" value="{{ old('keyword.ar' , setting('keyword.ar') ) }}"
+                                        <input type="text" dir="rtl" name="keyword[ar]" value="{{ old('keyword.ar' , setting('keyword.ar') ) }}"
                                                class="form-control @if($errors->has('keyword.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-12 mt-2">
@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">SEO Description (Ar)</label>
-                                        <input type="text" name="description[ar]" value="{{ old('description.ar' , setting('description.ar') ) }}"
+                                        <input type="text" dir="rtl" name="description[ar]" value="{{ old('description.ar' , setting('description.ar') ) }}"
                                                class="form-control @if($errors->has('description.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-12 mt-2">
@@ -115,7 +115,7 @@
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">Copyright Footer (Ar)</label>
-                                        <input type="text" name="copyright[ar]" value="{{ old('copyright.ar' , setting('copyright.ar') ) }}"
+                                        <input type="text" dir="rtl" name="copyright[ar]" value="{{ old('copyright.ar' , setting('copyright.ar') ) }}"
                                                class="form-control @if($errors->has('copyright.ar')) is-invalid @endif">
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Address (Ar)</label>
-                                        <textarea  name="address[ar]" class="form-control @if($errors->has('address.ar')) is-invalid @endif">{{ old('address.ar' , setting('address.ar') ) }}</textarea>
+                                        <textarea  name="address[ar]" dir="rtl" class="form-control @if($errors->has('address.ar')) is-invalid @endif">{{ old('address.ar' , setting('address.ar') ) }}</textarea>
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">Location</label>
