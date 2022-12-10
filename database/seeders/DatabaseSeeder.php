@@ -43,6 +43,13 @@ class DatabaseSeeder extends Seeder
              'order' => 10
          ]);
          \App\Models\Menu::factory()->create([
+             'title' => 'About us',
+             'type' => 'admin_sidebar',
+             'icon' => 'fa fa-business-time',
+             'order' => 400
+         ]);
+
+         \App\Models\Menu::factory()->create([
              'title' => 'Contact Us',
              'type' => 'admin_sidebar',
              'route' => [
@@ -98,6 +105,16 @@ class DatabaseSeeder extends Seeder
             ],
             'type' => 'admin_sidebar',
             'order' => 999998
+        ]);
+
+        \App\Models\Menu::factory()->create([
+            'title' => 'Our Services',
+            'parent_id' => 3,
+            'route' => [
+                'route_name' => "admin:services.index"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 500
         ]);
     }
 }
