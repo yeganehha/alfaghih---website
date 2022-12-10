@@ -22,9 +22,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
+Route::redirect('/' ,'/gwc/dashboard')->name('dashboard');
+
 Route::apiResource('setting' , SettingController::class )->only('index','store');
 Route::get('contactus' , [ContactusController::class , 'index'] )->name('contactus.index');
 Route::get('contactus/{contactus}' , [ContactusController::class , 'show'] )->name('contactus.show');
