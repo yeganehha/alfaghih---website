@@ -134,5 +134,15 @@ class DatabaseSeeder extends Seeder
             'type' => 'admin_sidebar',
             'order' => 300
         ]);
+        \App\Models\Menu::factory()->create([
+            'title' => 'Team Member',
+            'parent_id' => 3,
+            'route' => [
+                'route_name' => "admin:teams.index"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 100
+        ]);
+
     }
 }
