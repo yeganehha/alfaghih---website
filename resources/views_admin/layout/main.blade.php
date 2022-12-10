@@ -2,10 +2,10 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8"/>
-    <title>@yield('title') | {{ config('app.name', 'GulfWeb') }}</title>
+    <title>@yield('title') | {{ setting('name.en', 'GulfWeb') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{--    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />--}}
+    <link rel="shortcut icon" href="{{ setting('logo.icon', 'https://gulfclick.net/uploads/logo/favicon-6eb27db8f6c0f868878cb95268ed6101.png') }}" />
 
 <!-- begin::header -->
 @yield('header')

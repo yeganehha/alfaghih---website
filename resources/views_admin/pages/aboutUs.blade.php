@@ -1,5 +1,5 @@
 @extends('layout.main')
-@section('title' , 'Setting' )
+@section('title' , 'About us' )
 @section('content')
 
     <form action="{{ route('admin:about_us.store') }}" method="POST">

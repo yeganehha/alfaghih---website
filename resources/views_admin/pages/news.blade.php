@@ -102,7 +102,7 @@
 @section('subheader')
     <span class="kt-subheader__breadcrumbs-separator"></span>
     <a href="{{ route('admin:admins.index') }}" class="kt-subheader__breadcrumbs-link">
-        Admins
+        News
     </a>
 @endsection
 

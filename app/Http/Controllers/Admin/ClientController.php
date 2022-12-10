@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Client\StoreClientRequest;
 use App\Http\Requests\Admin\Client\UpdateClientRequest;
 use App\Models\Client;
-use App\Models\Newspaper;
 
 class ClientController extends Controller
 {
@@ -45,7 +44,7 @@ class ClientController extends Controller
      */
     public function store(StoreClientRequest $request)
     {
-        Newspaper::query()->create($request->all());
+        Client::query()->create($request->all());
         return redirect()->route('admin:clients.index')->with('success' , 'Client added successfully.');
     }
 

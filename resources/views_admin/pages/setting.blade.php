@@ -240,7 +240,7 @@
             z-index: 90 !important;
         }
         .leaflet-top, .leaflet-bottom {
-            z-index: 95 !important;
+            z-index: 92 !important;
         }
     </style>
 @endsection

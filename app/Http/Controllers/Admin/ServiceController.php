@@ -72,7 +72,7 @@ class ServiceController extends Controller
      */
     public function update(UpdateServiceRequest $request, Service $service)
     {
-        $service->updated($request->all());
+        $service->update($request->all());
         return redirect()->route('admin:services.index')->with('success' , 'Service updated successfully.');
     }
 

@@ -18,8 +18,8 @@ class PartnerController extends Controller
     {
         return view('list' , [
             'createLink' => route("admin:partners.create") ,
-            'title' => 'Client',
-            'table' => 'client',
+            'title' => 'Partner',
+            'table' => 'partner',
         ]);
     }
 
