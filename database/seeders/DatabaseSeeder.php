@@ -98,13 +98,22 @@ class DatabaseSeeder extends Seeder
             'order' => 999999
         ]);
         \App\Models\Menu::factory()->create([
+            'title' => 'Page content',
+            'parent_id' => 2,
+            'route' => [
+                'route_name' => "admin:content"
+            ],
+            'type' => 'admin_sidebar',
+            'order' => 999998
+        ]);
+        \App\Models\Menu::factory()->create([
             'title' => 'Admins',
             'parent_id' => 2,
             'route' => [
                 'route_name' => "admin:admins.index"
             ],
             'type' => 'admin_sidebar',
-            'order' => 999998
+            'order' => 999997
         ]);
 
         \App\Models\Menu::factory()->create([

@@ -27,7 +27,7 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Title (Ar)</label>
-                                        <input type="text" name="about_us[page][name][ar]" value="{{ old('bout_us.page.name.ar' , setting('bout_us.page.name.ar') ) }}"
+                                        <input type="text" dir="rtl" name="about_us[page][name][ar]" value="{{ old('bout_us.page.name.ar' , setting('bout_us.page.name.ar') ) }}"
                                                class="form-control @if($errors->has('about_us.page.name.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-6 mt-2">
@@ -36,7 +36,7 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Description (Ar)</label>
-                                        <textarea rows="7" name="about_us[page][description][ar]" class="form-control @if($errors->has('about_us.page.description.ar')) is-invalid @endif">{{ old('bout_us.page.description.ar' , setting('bout_us.page.description.ar') ) }}</textarea>
+                                        <textarea rows="7" dir="rtl" name="about_us[page][description][ar]" class="form-control @if($errors->has('about_us.page.description.ar')) is-invalid @endif">{{ old('bout_us.page.description.ar' , setting('bout_us.page.description.ar') ) }}</textarea>
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Image</label>
@@ -52,8 +52,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 mt-5">
-                                        @if ( setting('logo.icon' , false) )
-                                            <img src="{{ setting('logo.icon') }}" style="max-width: 100%;">
+                                        @if ( setting('about_us.page.image' , false) )
+                                            <img src="{{ setting('about_us.page.image') }}" style="max-width: 100%;">
                                         @endif
                                     </div>
                                 </div>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Title (Ar)</label>
-                                        <input type="text" name="about_us[home][name][ar]" value="{{ old('bout_us.home.name.ar' , setting('bout_us.home.name.ar') ) }}"
+                                        <input type="text" dir="rtl" name="about_us[home][name][ar]" value="{{ old('bout_us.home.name.ar' , setting('bout_us.home.name.ar') ) }}"
                                                class="form-control @if($errors->has('about_us.home.name.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-6 mt-2">
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Description (Ar)</label>
-                                        <textarea rows="7" name="about_us[home][description][ar]" class="form-control @if($errors->has('about_us.home.description.ar')) is-invalid @endif">{{ old('bout_us.home.description.ar' , setting('bout_us.home.description.ar') ) }}</textarea>
+                                        <textarea rows="7" dir="rtl" name="about_us[home][description][ar]" class="form-control @if($errors->has('about_us.home.description.ar')) is-invalid @endif">{{ old('bout_us.home.description.ar' , setting('bout_us.home.description.ar') ) }}</textarea>
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Image</label>
@@ -106,8 +106,8 @@
                                         </div>
                                     </div>
                                     <div class="col-md-3 mt-5">
-                                        @if ( setting('logo.icon' , false) )
-                                            <img src="{{ setting('logo.icon') }}" style="max-width: 100%;">
+                                        @if ( setting('about_us.home.image' , false) )
+                                            <img src="{{ setting('about_us.home.image') }}" style="max-width: 100%;">
                                         @endif
                                     </div>
                                 </div>
