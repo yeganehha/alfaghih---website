@@ -41,7 +41,18 @@ class SettingController extends Controller
 
     public function storeContent(StoreContentRequest $request)
     {
-        Settings::force()->set(Arr::dot($request->except('_token')));
+        $values = Arr::dot($request->except('_token'));
+        $values = array_merge([
+            'content.show.about_us' => false,
+            'content.show.services' => false,
+            'content.show.our_team' => false,
+            'content.show.client' => false,
+            'content.show.partner' => false,
+            'content.show.news' => false,
+            'content.show.contact_us' => false,
+            'content.show.consultation' => false,
+        ] , $values);
+        Settings::force()->set($values);
         return redirect()->route('admin:content')->with('success' , 'Content saved.');
     }
 

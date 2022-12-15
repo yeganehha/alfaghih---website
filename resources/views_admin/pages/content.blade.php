@@ -89,10 +89,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.about_us' , false) )
                                             <img src="{{ setting('content.image.about_us') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][about_us]"
+                                                                   @if ( old('content.show.about_us' , setting('content.show.about_us' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -109,10 +128,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.services' , false) )
                                             <img src="{{ setting('content.image.services') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][services]"
+                                                                   @if ( old('content.show.services' , setting('content.show.services' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -129,10 +167,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.our_team' , false) )
                                             <img src="{{ setting('content.image.our_team') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][our_team]"
+                                                                   @if ( old('content.show.our_team' , setting('content.show.our_team' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -149,10 +206,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.client' , false) )
                                             <img src="{{ setting('content.image.client') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][client]"
+                                                                   @if ( old('content.show.client' , setting('content.show.client' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -169,10 +245,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.partner' , false) )
                                             <img src="{{ setting('content.image.partner') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][partner]"
+                                                                   @if ( old('content.show.partner' , setting('content.show.partner' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -189,10 +284,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.news' , false) )
                                             <img src="{{ setting('content.image.news') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][news]"
+                                                                   @if ( old('content.show.news' , setting('content.show.news' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -209,10 +323,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.contact_us' , false) )
                                             <img src="{{ setting('content.image.contact_us') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][contact_us]"
+                                                                   @if ( old('content.show.contact_us' , setting('content.show.contact_us' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row">
@@ -229,10 +362,29 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-md-3 mt-5">
+                                    <div class="col-md-3 mt-4">
                                         @if ( setting('content.image.consultation' , false) )
                                             <img src="{{ setting('content.image.consultation') }}" style="max-width: 100%;">
                                         @endif
+                                    </div>
+                                    <div class="col-md-3 mt-4">
+                                        <!-- is language active -->
+                                        <div class="form-group">
+                                            <div class="input-group row">
+                                                <label class="col-12">Show In Menu</label>
+                                                <div class="col-12">
+                                                    <span class="kt-switch">
+                                                        <label>
+                                                            <input value="1" type="checkbox" name="content[show][consultation]"
+                                                                   @if ( old('content.show.consultation' , setting('content.show.consultation' , false) )  )
+                                                                       checked
+                                                                    @endif>
+                                                            <span></span>
+                                                        </label>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <input type="submit" class="btn btn-success mt-5" value="Submit">

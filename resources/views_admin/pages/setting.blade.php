@@ -167,6 +167,11 @@
                                         <input type="text" class="form-control @if($errors->has('phone')) is-invalid @endif"
                                                name="phone" value="{{ old('phone' , setting('phone') ) }}">
                                     </div>
+                                    <div class="col-md-6 mt-2">
+                                        <label class="form-label">Whats app number</label>
+                                        <input type="text" class="form-control @if($errors->has('Whats_app')) is-invalid @endif"
+                                               name="Whats_app" value="{{ old('Whats_app' , setting('Whats_app') ) }}">
+                                    </div>
                                     <div class="col-md-12 mt-5">
                                         <h1>Social Links</h1>
                                     </div>
