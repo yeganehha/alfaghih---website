@@ -15,8 +15,40 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
-Auth::routes();
+Route::get('/about_us', function () {
+    return view('welcome');
+})->name('about_us');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/services', function () {
+    return view('welcome');
+})->name('services');
+
+Route::get('/our_team', function () {
+    return view('welcome');
+})->name('our_team');
+
+Route::get('/clients', function () {
+    return view('welcome');
+})->name('clients');
+
+Route::get('/partners', function () {
+    return view('welcome');
+})->name('partners');
+
+Route::get('/news_events', function () {
+    return view('welcome');
+})->name('news_events');
+
+Route::get('/consultation', function () {
+    return view('welcome');
+})->name('consultation');
+
+Route::get('/contact_us', function () {
+    return view('welcome');
+})->name('contact_us');
+
+Route::get('/change/locale/{locale}', function () {
+    return view('welcome');
+})->name('change_locale');

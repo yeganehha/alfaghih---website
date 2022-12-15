@@ -105,16 +105,34 @@
                         <div class="de-flex-col header-col-mid">
                             <!-- mainmenu begin -->
                             <ul id="mainmenu">
-                                <li><a href="index.html">Home</a></li>
-                                <li><a href="about_us.html">About us</a></li>
-                                <li><a href="services.html">Services</a></li>
-                                <li><a href="our_team.html">Our Team</a></li>
-                                <li><a href="clients.html">Clients</a></li>
-                                <li><a href="partners.html">Partners</a></li>
-                                <li><a href="news_events.html">News &amp; Events</a></li>
-                                <li><a href="consultaion.html">Counsultation</a></li>
-                                <li><a href="contact_us.html">Contact us</a></li>
-                                <li class="arabic"><a href="arindex.html">العربية</a></li>
+                                <li><a href="{{ route('index') }}">{{ trans('Home') }}</a></li>
+                                @if ( setting('content.show.about_us' , true))
+                                <li><a href="{{ route('about_us') }}">{{ trans('about_us') }}</a></li>
+                                @endif
+                                @if ( setting('content.show.services' , true))
+                                <li><a href="{{ route('services') }}">{{ trans('services') }}</a></li>
+                                @endif
+                                @if ( setting('content.show.our_team' , true))
+                                <li><a href="{{ route('our_team') }}">{{ trans('our_team') }}</a></li>
+                                @endif
+                                @if ( setting('content.show.client' , true))
+                                <li><a href="{{ route('clients') }}">{{ trans('clients') }}</a></li>
+                                @endif
+                                @if ( setting('content.show.partner' , true))
+                                <li><a href="{{ route('partners') }}">{{ trans('partners') }}</a></li>
+                                @endif
+                                @if ( setting('content.show.news' , true))
+                                <li><a href="{{ route('news_events') }}">{!! trans('news_events') !!}</a></li>
+                                @endif
+                                @if ( setting('content.show.consultation' , true))
+                                <li><a href="{{ route('consultation') }}">{{ trans('consultation') }}</a></li>
+                                @endif
+                                @if ( setting('content.show.contact_us' , true))
+                                <li><a href="{{ route('contact_us') }}">{{ trans('contact_us') }}</a></li>
+                                @endif
+                                @if ( app()->getLocale() == "en")
+                                <li class="arabic"><a href="{{ route('change_locale' , 'ar') }}">{{ trans('arabic') }}</a></li>
+                                @endif
                             </ul>
                             <!-- mainmenu close -->
                         </div>
@@ -158,11 +176,32 @@
                 <div class="col-md-2">
                     <h5 class="my-color mb20">{{ trans('Quick_links') }}</h5>
                     <ul class="ul-style-2">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about_us.html">About us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="news_events.html">News &amp; Events</a></li>
-                        <li><a href="contact_us.html">Contact us</a></li>
+
+                        <li><a href="{{ route('index') }}">{{ trans('Home') }}</a></li>
+                        @if ( setting('content.show.about_us' , true))
+                            <li><a href="{{ route('about_us') }}">{{ trans('about_us') }}</a></li>
+                        @endif
+                        @if ( setting('content.show.services' , true))
+                            <li><a href="{{ route('services') }}">{{ trans('services') }}</a></li>
+                        @endif
+                        @if ( setting('content.show.our_team' , true) and false)
+                            <li><a href="{{ route('our_team') }}">{{ trans('our_team') }}</a></li>
+                        @endif
+                        @if ( setting('content.show.client' , true) and false)
+                            <li><a href="{{ route('clients') }}">{{ trans('clients') }}</a></li>
+                        @endif
+                        @if ( setting('content.show.partner' , true) and false)
+                            <li><a href="{{ route('partners') }}">{{ trans('partners') }}</a></li>
+                        @endif
+                        @if ( setting('content.show.news' , true))
+                            <li><a href="{{ route('news_events') }}">{!! trans('news_events') !!}</a></li>
+                        @endif
+                        @if ( setting('content.show.consultation' , true) and false)
+                            <li><a href="{{ route('consultation') }}">{{ trans('consultation') }}</a></li>
+                        @endif
+                        @if ( setting('content.show.contact_us' , true))
+                            <li><a href="{{ route('contact_us') }}">{{ trans('contact_us') }}</a></li>
+                        @endif
                     </ul>
                 </div>
                 <div class="col-lg-6">
