@@ -31,8 +31,13 @@ class Newspaper extends Model
     ];
 
 
-    public function comments(): \Illuminate\Database\Eloquent\Relations\MorphToMany
+    public function comments()
     {
-        return $this->morphToMany(Comment::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable' )->where('is_approved', true);
+    }
+
+    public function comments_parent()
+    {
+        return $this->morphMany(Comment::class, 'commentable' )->where('is_approved', true)->where('parent_id' , null);
     }
 }

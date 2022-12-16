@@ -26,6 +26,7 @@ class UpdateClientRequest extends FormRequest
         return [
             'name.*' => ['required' , 'string'],
             'image' => ['required' , 'url'],
+            'website' => ['nullable' , 'url'],
             'order' => ['nullable' , 'numeric']
         ];
     }

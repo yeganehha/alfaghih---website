@@ -61,6 +61,8 @@ class PartnerTable extends DataTableComponent
             Column::make("Name", "name")
                 ->searchable()
                 ->sortable(),
+            Column::make("Order", "order")
+                ->sortable(),
             BooleanColumn::make("Active", "is_active")
                 ->sortable(),
             Column::make("Active", "image")

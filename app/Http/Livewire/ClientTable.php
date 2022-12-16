@@ -17,7 +17,7 @@ class ClientTable extends DataTableComponent
     public function configure(): void
     {
         $this->setPrimaryKey('id');
-        $this->setDefaultSort('id', 'desc');
+        $this->setDefaultSort('order');
     }
 
 
@@ -58,6 +58,8 @@ class ClientTable extends DataTableComponent
                 ->sortable(),
             Column::make("Name", "name")
                 ->searchable()
+                ->sortable(),
+            Column::make("Order", "order")
                 ->sortable(),
             BooleanColumn::make("Active", "is_active")
                 ->sortable(),

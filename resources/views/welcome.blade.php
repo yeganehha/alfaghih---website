@@ -44,46 +44,21 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="text-center">
-                            <h2>Our Services</h2>
+                            <h2>{{ trans('our_services') }}</h2>
                             <div class="small-border"></div>
                         </div>
                     </div>
+                    @foreach($services as $service)
                     <div class="col-lg-6 col-md-6 mb30">
                         <div class="f-box f-icon-left f-icon-rounded">
-                            <i class="icofont-law bg-color text-light"></i>
+                            <i class="{{ $service->icon }} bg-color text-light"></i>
                             <div class="fb-text">
-                                <h4>Penal Code</h4>
-                                <p>The team at Al-Faqih Group has a long history of distinguished experiences that exceeded forty years in the field of criminal cases of all kinds, adhering to the principles of law and procedures to provide an integrated defense in terms of law and subject matter, ensuring that the client is provided with the required care and adequate effort to reach their desired rights.</p>
+                                <h4>{{ $service->name }}</h4>
+                                <p>{{ $service->description }}</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-md-6 mb30">
-                        <div class="f-box f-icon-left f-icon-rounded">
-                            <i class="icofont-lawyer-alt-1 bg-color text-light"></i>
-                            <div class="fb-text">
-                                <h4>Civil Law</h4>
-                                <p>Al-Faqih Group team works with its extensive experience in providing advice, legal opinions and legal representation in all cases under the umbrella of civil law for all parties.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 mb30">
-                        <div class="f-box f-icon-left f-icon-rounded">
-                            <i class="icofont-lawyer bg-color text-light"></i>
-                            <div class="fb-text">
-                                <h4>Personal Status Law</h4>
-                                <p>The State of Kuwait, beginning with the constitution, has given special attention to the family as it is the basis of society, in addition to what the Kuwaiti society has built upon in regard to the interest and appreciation of the family and its position. Initiating lawsuits in which we have extensive experience.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-6 mb30">
-                        <div class="f-box f-icon-left f-icon-rounded">
-                            <i class="icofont-law-order bg-color text-light"></i>
-                            <div class="fb-text">
-                                <h4>Cases of banks and insurance companies</h4>
-                                <p>The team at Al-Faqih Group, with its long-standing experience in banking and insurance companies' cases, provides the necessary legal solutions to achieve the client's interest, whether from banks and insurance companies or from individuals through amicable settlements or through lawsuits to ensure rights and justice for all parties.</p>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </section>

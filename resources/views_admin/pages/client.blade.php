@@ -30,11 +30,15 @@
                                 <input type="text" dir="rtl" name="name[ar]" class="form-control @if($errors->has('name.ar')) is-invalid @endif"
                                        value="{{ old('name.ar' , $object->getTranslation('name' , 'ar') ) }}">
                             </div>
-                            <div class="col-md-4 mt-2">
+                            <div class="col-md-6 mt-2">
+                                <label class="form-label">Website</label>
+                                <input type="url" name="website" class="form-control @if($errors->has('website')) is-invalid @endif"  value="{{ old('website' , $object->website ) }}">
+                            </div>
+                            <div class="col-md-6 mt-2">
                                 <label class="form-label">Order number</label>
                                 <input type="number" required name="order" class="form-control @if($errors->has('order')) is-invalid @endif"  value="{{ old('order' , $object->order ) }}">
                             </div>
-                            <div class="col-md-4 mt-2">
+                            <div class="col-md-6 mt-2">
                                 <label class="form-label">Image *</label>
                                 <div class="input-group">
                                     <input type="text" class="form-control @if($errors->has('image')) is-invalid @endif"

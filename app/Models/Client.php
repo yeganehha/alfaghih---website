@@ -13,6 +13,7 @@ class Client extends Model
     protected $fillable = [
         'name',
         'image',
+        'website',
         'order',
         'is_active',
     ];

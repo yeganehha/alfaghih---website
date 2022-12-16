@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->json('name')->nullable();
             $table->string('image')->nullable();
+            $table->string('website')->nullable();
             $table->integer('order')->default(0);
             $table->boolean('is_active')->default(1);
             $table->timestamps();
