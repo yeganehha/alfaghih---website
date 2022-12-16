@@ -4,13 +4,17 @@
     <!-- content begin -->
     <div class="no-bottom no-top" id="content">
         <div id="top"></div>
-        <section aria-label="section" class="vh-100 no-padding text-light" data-bgimage="url(images/background/6.jpg) top" data-stellar-background-ratio=".2">
+        <section aria-label="section" class="vh-100 no-padding text-light" data-bgimage="url({{ setting('content.image.homepage') }}) top" data-stellar-background-ratio=".2">
             <div class="v-center">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-lg-6">
-                            <h2 class="wow fadeInUp text-uppercase" data-wow-delay=".6s">Al-Faqih Group for Advocates and Legal Consultations</h2>
-                            <p class="wow fadeInUp" data-wow-delay=".4s">A legal group working in the field of law and legal advice, firmly rooted in the principles of the profession, justice, transparency, the rule of law and the preservation of human dignity and freedom</p>
+                            @if( setting('content.short_title.'.app()->getLocale()) )
+                            <h2 class="wow fadeInUp text-uppercase" data-wow-delay=".6s">{{ setting('content.short_title.'.app()->getLocale()) }}</h2>
+                            @endif
+                            @if( setting('content.title.'.app()->getLocale()) )
+                            <p class="wow fadeInUp" data-wow-delay=".4s">{{ setting('content.title.'.app()->getLocale()) }}</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -22,17 +26,17 @@
                 <div class="row align-items-center">
                     <div class="col-lg-5 offset-lg-7">
                         <h2>
-                            Al-Faqih Group for Advocates and Legal Consultations
+                            {{ setting('about_us.home.name.'.app()->getLocale()) }}
                         </h2>
                         <div class="tab-content" id="pills-tabContent">
                             <div class="tab-pane fade show active">
-                                <p>Al-Faqih Group for Advocates and Legal Consultations .. a legal group working in the field of law and legal advice, firmly rooted in the principles of the profession, justice, transparency, the rule of law and the preservation of human dignity and freedom</p>
+                                <p>{{ setting('about_us.home.description.'.app()->getLocale()) }}</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="image-container col-md-6 pull-right" data-bgimage="url(images/background/12.jpg) center"></div>
+            <div class="image-container col-md-6 pull-right" data-bgimage="url({{ setting('about_us.home.image') }}) center"></div>
         </section>
 
         <section class="no-top">
