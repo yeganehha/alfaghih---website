@@ -30,10 +30,10 @@
                                 <span><i class="my-color fa fa-map-marker fa-lg"></i> {{ setting('address.'.app()->getLocale()) }}</span>
                             @endif
                             @if( setting('phone') )
-                                <span><i class="my-color fa fa-phone fa-lg"></i><a href="tel:{{ setting('Whats_app') }}" target="_blank">{{ setting('phone') }}</a></span>
+                                    <span><i class="my-color fa fa-phone fa-lg"></i><a href="tel:{{ setting('Whats_app') }}" target="_blank"><font dir="ltr">{{ setting('phone') }}</font></a></span>
                             @endif
                             @if( setting('Whats_app') )
-                                <span><i class="my-color fa fa-whatsapp fa-lg"></i><a href="http://wa.me/{{ setting('Whats_app') }}" target="_blank">{{ setting('Whats_app') }}</a></span>
+                                    <span><i class="my-color fa fa-whatsapp fa-lg"></i><a href="http://wa.me/{{ setting('Whats_app') }}" target="_blank"><font dir="ltr">{{ setting('Whats_app') }}</font></a></span>
                             @endif
                             @if( setting('email') )
                                 <span><i class="my-color fa fa-envelope fa-lg"></i><a href="mailto:{{ setting('email') }}" target="_blank">{{ setting('email') }}</a></span>

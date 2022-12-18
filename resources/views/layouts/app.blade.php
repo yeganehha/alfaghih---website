@@ -16,9 +16,9 @@
     <![endif]-->
     <!-- CSS Files
     ================================================== -->
-    <link id="bootstrap" href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link id="bootstrap-grid" href="{{ asset('assets/css/bootstrap-grid.min.css') }}" rel="stylesheet" type="text/css" />
-    <link id="bootstrap-reboot" href="{{ asset('assets/css/bootstrap-reboot.min.css') }}" rel="stylesheet" type="text/css" />
+    <link id="bootstrap" href="{{ asset('assets/css/bootstrap'.(app()->getLocale() == "ar" ? '-rtl' : '') .'.min.css') }}" rel="stylesheet" type="text/css" />
+    <link id="bootstrap-grid" href="{{ asset('assets/css/bootstrap-grid'.(app()->getLocale() == "ar" ? '-rtl' : '') .'.min.css') }}" rel="stylesheet" type="text/css" />
+    <link id="bootstrap-reboot" href="{{ asset('assets/css/bootstrap-reboot'.(app()->getLocale() == "ar" ? '-rtl' : '') .'.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/owl.carousel.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/owl.theme.css') }}" rel="stylesheet" type="text/css" />
@@ -41,16 +41,16 @@
     @livewireStyles
 </head>
 
-<body>
+<body @if ( app()->getLocale() == "ar" ) class="rtl" @endif>
 <div id="wrapper">
     <div id="topbar" class="text-white bg-color">
         <div class="container">
             <div class="topbar-left sm-hide">
                 @if( setting('address.'.app()->getLocale()) )
-                    <span class="topbar-widget"><i class="fa fa-map-marker"></i> {{ setting('address.'.app()->getLocale()) }}</span>
+                    <span class="topbar-widget"><i class="fa fa-map-marker"></i>@if ( app()->getLocale() == "ar" ) &nbsp; @endif {{ setting('address.'.app()->getLocale()) }}</span>
                 @endif
                 @if( setting('Whats_app') )
-                    <span class="topbar-widget"><i class="fa fa-whatsapp"></i><a href="http://wa.me/{{ setting('Whats_app') }}" target="_blank">{{ setting('Whats_app') }}</a></span>
+                        <span class="topbar-widget"><i class="fa fa-whatsapp"></i><a href="http://wa.me/{{ setting('Whats_app') }}" target="_blank">@if ( app()->getLocale() == "ar" ) &nbsp; @endif <font dir="ltr">{{ setting('Whats_app') }}</font></a></span>
                 @endif
             </div>
             <div class="topbar-right">
@@ -96,8 +96,8 @@
                             <!-- logo begin -->
                             <div id="logo">
                                 <a href="{{ url('/') }}">
-                                    <img alt="{{ setting('name.'.app()->getLocale()) }}" class="logo" src="{{ setting('logo.light') }}" />
-                                    <img alt="{{ setting('name.'.app()->getLocale()) }}" class="logo-2" src="{{ setting('logo.dark') }}" />
+                                    <img alt="{{ setting('name.'.app()->getLocale()) }}" class="logo" src="{{ setting('logo.light'.(app()->getLocale() == "ar" ? '_ar' : '')) }}" />
+                                    <img alt="{{ setting('name.'.app()->getLocale()) }}" class="logo-2" src="{{ setting('logo.dark'.(app()->getLocale() == "ar" ? '_ar' : '')) }}" />
                                 </a>
                             </div>
                             <!-- logo close -->
@@ -132,6 +132,8 @@
                                 @endif
                                 @if ( app()->getLocale() == "en")
                                 <li class="arabic"><a href="{{ route('change_locale' , 'ar') }}">{{ trans('arabic') }}</a></li>
+                                @else
+                                <li class="english"><a href="{{ route('change_locale' , 'en') }}">{{ trans('english') }}</a></li>
                                 @endif
                             </ul>
                             <!-- mainmenu close -->
@@ -156,16 +158,16 @@
             <div class="row">
                 <div class="col-lg-4">
                     <div class="widget">
-                        <a href="{{ url('/') }}"><img alt="{{ setting('name.'.app()->getLocale()) }}" class="img-fluid mb20" src="{{ setting('logo.light') }}"></a>
+                        <a href="{{ url('/') }}"><img alt="{{ setting('name.'.app()->getLocale()) }}" class="img-fluid mb20" src="{{ setting('logo.light'.(app()->getLocale() == "ar" ? '_ar' : '')) }}"></a>
                         <address class="s1">
                             @if( setting('address.'.app()->getLocale()) )
                                 <span><i class="my-color fa fa-map-marker fa-lg"></i> {{ setting('address.'.app()->getLocale()) }}</span>
                             @endif
                             @if( setting('phone') )
-                                    <span><i class="my-color fa fa-phone fa-lg"></i><a href="tel:{{ setting('Whats_app') }}" target="_blank">{{ setting('phone') }}</a></span>
+                                    <span><i class="my-color fa fa-phone fa-lg"></i><a href="tel:{{ setting('Whats_app') }}" target="_blank"><font dir="ltr">{{ setting('phone') }}</font></a></span>
                             @endif
                             @if( setting('Whats_app') )
-                                <span><i class="my-color fa fa-whatsapp fa-lg"></i><a href="http://wa.me/{{ setting('Whats_app') }}" target="_blank">{{ setting('Whats_app') }}</a></span>
+                                    <span><i class="my-color fa fa-whatsapp fa-lg"></i><a href="http://wa.me/{{ setting('Whats_app') }}" target="_blank"><font dir="ltr">{{ setting('Whats_app') }}</font></a></span>
                             @endif
                             @if( setting('email') )
                                 <span><i class="my-color fa fa-envelope fa-lg"></i><a href="mailto:{{ setting('email') }}" target="_blank">{{ setting('email') }}</a></span>
@@ -259,7 +261,7 @@
 <!-- Javascript Files
 ================================================== -->
 <script src="{{ asset('assets/js/jquery.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap'.(app()->getLocale() == "ar" ? '-rtl' : '').'.min.js') }}"></script>
 <script src="{{ asset('assets/js/wow.min.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.isotope.min.js') }}"></script>
 <script src="{{ asset('assets/js/easing.js') }}"></script>

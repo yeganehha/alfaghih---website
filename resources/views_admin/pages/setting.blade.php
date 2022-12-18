@@ -31,7 +31,7 @@
                                                class="form-control @if($errors->has('name.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-9 mt-2">
-                                        <label class="form-label">Light Logo</label>
+                                        <label class="form-label">Light Logo (En)</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control @if($errors->has('logo.light')) is-invalid @endif"
                                                    name="logo[light]" value="{{ old('logo.light' , setting('logo.light') ) }}">
@@ -49,7 +49,7 @@
                                         @endif
                                     </div>
                                     <div class="col-md-9 mt-2">
-                                        <label class="form-label">Dark Logo</label>
+                                        <label class="form-label">Dark Logo (En)</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control @if($errors->has('logo.dark')) is-invalid @endif"
                                                    name="logo[dark]" value="{{ old('logo.dark' , setting('logo.dark') ) }}">
@@ -64,6 +64,42 @@
                                     <div class="col-md-3 mt-5">
                                         @if ( setting('logo.dark' , false) )
                                             <img src="{{ setting('logo.dark') }}" style="max-width: 100%;">
+                                        @endif
+                                    </div>
+                                    <div class="col-md-9 mt-2">
+                                        <label class="form-label">Light Logo (Ar)</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control @if($errors->has('logo.light_ar')) is-invalid @endif"
+                                                   name="logo[light_ar]" value="{{ old('logo.light_ar' , setting('logo.light_ar') ) }}">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                        onclick="event.preventDefault();window.open('/file-manager/fm-button', 'fm', 'width=900,height=600');fmIdSetLink=$(this).parent().parent().find('input').first();">
+                                                    Select
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mt-4 bg-dark pt-3">
+                                        @if ( setting('logo.light_ar' , false) )
+                                            <img src="{{ setting('logo.light_ar') }}" style="max-width: 100%;">
+                                        @endif
+                                    </div>
+                                    <div class="col-md-9 mt-2">
+                                        <label class="form-label">Dark Logo (Ar)</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control @if($errors->has('logo.dark_ar')) is-invalid @endif"
+                                                   name="logo[dark_ar]" value="{{ old('logo.dark_ar' , setting('logo.dark_ar') ) }}">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                        onclick="event.preventDefault();window.open('/file-manager/fm-button', 'fm', 'width=900,height=600');fmIdSetLink=$(this).parent().parent().find('input').first();">
+                                                    Select
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mt-5">
+                                        @if ( setting('logo.dark_ar' , false) )
+                                            <img src="{{ setting('logo.dark_ar') }}" style="max-width: 100%;">
                                         @endif
                                     </div>
                                     <div class="col-md-9 mt-2">
