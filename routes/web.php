@@ -30,11 +30,11 @@ Route::get('/news_events',[HomeController::class , 'newspaper'])->name('news_eve
 Route::get('/news_events/{newspaper}',[HomeController::class , 'news'])->name('news');
 
 Route::view('/consultation','consultation')->name('consultation');
+Route::view('/contact_us','contact_us')->name('contact_us');
 
-Route::get('/contact_us', function () {
-    return view('welcome');
-})->name('contact_us');
 
-Route::get('/change/locale/{locale}', function () {
-    return view('welcome');
-})->name('change_locale');
+Route::get('/change/locale/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+})->where(['locale'=>('en|ar')])->name('change_locale')->withoutMiddleware('language');

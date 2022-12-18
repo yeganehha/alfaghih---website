@@ -282,9 +282,14 @@
     window.onload = function() {
         var map = L.map('map').setView([ {{ setting('location_lat') }} , {{ setting('location_long') }} ], 12.5);
         L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map);
-        var marker = L.marker([  {{ setting('location_lat') }} , {{ setting('location_long') }} ]).addTo(map);
+        L.marker([  {{ setting('location_lat') }} , {{ setting('location_long') }} ]).addTo(map);
     };
 </script>
+@endif
+
+
+@hasSection('js')
+    @yield('js')
 @endif
 
 @livewireScripts

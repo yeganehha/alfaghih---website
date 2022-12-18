@@ -24,6 +24,7 @@
     "Phone": "Phone",
     "Message": "Message",
     "SEND": "SEND",
+    "Address": "Address",
     "HasQuestion": "Do you have any question?",
     "message_sent": "Your message has been sent successfully.",
     "message_unsent": "Sorry, error occurred this time sending your message.",
