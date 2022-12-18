@@ -29,9 +29,7 @@ Route::get('/partners', [HomeController::class , 'partners'])->name('partners');
 Route::get('/news_events',[HomeController::class , 'newspaper'])->name('news_events');
 Route::get('/news_events/{newspaper}',[HomeController::class , 'news'])->name('news');
 
-Route::get('/consultation', function () {
-    return view('welcome');
-})->name('consultation');
+Route::view('/consultation','consultation')->name('consultation');
 
 Route::get('/contact_us', function () {
     return view('welcome');

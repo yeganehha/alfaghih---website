@@ -21,7 +21,12 @@
     "comment_sent": "Your comment has been sent successfully, please wait for the comment to be confirmed.",
     "Name": "Name",
     "Email": "Email",
+    "Phone": "Phone",
     "Message": "Message",
     "SEND": "SEND",
+    "HasQuestion": "Do you have any question?",
+    "message_sent": "Your message has been sent successfully.",
+    "message_unsent": "Sorry, error occurred this time sending your message.",
+    "Your": "Your ",
     "arabic": "العربية"
 }
