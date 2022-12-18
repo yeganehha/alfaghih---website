@@ -45,20 +45,7 @@
                             <div id="comment-form-wrapper">
                                 <h4>{{ trans('Leave_Comment') }}</h4>
                                 <div class="comment_form_holder">
-                                    <form id="contact_form" name="form1" class="form-default" method="post" action="#">
-                                        <label>Name</label>
-                                        <input type="text" name="name" id="name" class="form-control" />
-                                        <label>Email <span class="req">*</span></label>
-                                        <input type="text" name="email" id="email" class="form-control" />
-                                        <div id="error_email" class="error">Please check your email</div>
-                                        <label>Message <span class="req">*</span></label>
-                                        <textarea cols="10" rows="10" name="message" id="message" class="form-control"></textarea>
-                                        <div id="error_message" class="error">Please check your message</div>
-                                        <div id="mail_success" class="success">Thank you. Your message has been sent.</div>
-                                        <div id="mail_failed" class="error">Error, email not sent</div>
-                                        <p id="btnsubmit">
-                                            <input type="submit" id="send" value="Send" class="btn btn-custom" /></p>
-                                    </form>
+                                    @livewire('client.save-comment', ['commentAble' => $newspaper] )
                                 </div>
                             </div>
                         </div>

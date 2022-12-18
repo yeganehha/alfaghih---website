@@ -18,5 +18,10 @@
     "contact_us": "Contact us",
     "Next": "Next",
     "Previous": "Prev",
+    "comment_sent": "Your comment has been sent successfully, please wait for the comment to be confirmed.",
+    "Name": "Name",
+    "Email": "Email",
+    "Message": "Message",
+    "SEND": "SEND",
     "arabic": "العربية"
 }
