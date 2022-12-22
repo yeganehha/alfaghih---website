@@ -31,6 +31,18 @@ class Newspaper extends Model
     ];
 
 
+    /**
+     * Interact with the user's address.
+     *
+     * @return  \Illuminate\Database\Eloquent\Casts\Attribute
+     */
+    protected function image(): \Illuminate\Database\Eloquent\Casts\Attribute
+    {
+        return \Illuminate\Database\Eloquent\Casts\Attribute::make(
+            get: fn ($value) => str_replace('http://localhost:8000' , trim(config('app.url') , '/'), $value),
+        );
+    }
+
     public function comments()
     {
         return $this->morphMany(Comment::class, 'commentable' )->where('is_approved', true);
