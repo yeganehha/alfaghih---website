@@ -27,7 +27,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Name (Ar) *</label>
-                                <input type="text" name="name[ar]" class="form-control @if($errors->has('name.ar')) is-invalid @endif"
+                                <input type="text" dir="rtl" name="name[ar]" class="form-control @if($errors->has('name.ar')) is-invalid @endif"
                                        value="{{ old('name.ar' , $object->getTranslation('name' , 'ar') ) }}">
                             </div>
                             <div class="col-md-6 mt-2">
@@ -36,7 +36,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Truncate Content (Ar) *</label>
-                                <textarea rows="5" name="truncate[ar]" class="form-control @if($errors->has('truncate.ar')) is-invalid @endif">{{ old('truncate.ar' , $object->getTranslation('truncate' , 'ar') ) }}</textarea>
+                                <textarea rows="5" dir="rtl" name="truncate[ar]" class="form-control @if($errors->has('truncate.ar')) is-invalid @endif">{{ old('truncate.ar' , $object->getTranslation('truncate' , 'ar') ) }}</textarea>
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Content (En) *</label>
@@ -44,7 +44,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Content (Ar) *</label>
-                                <textarea rows="5" name="content_ar" class="form-control tinymce-editor-full-rtl @if($errors->has('content_ar')) is-invalid @endif">{!! old('content_ar' , $object->content_ar ) !!}</textarea>
+                                <textarea rows="5" dir="rtl" name="content_ar" class="form-control tinymce-editor-full-rtl @if($errors->has('content_ar')) is-invalid @endif">{!! old('content_ar' , $object->content_ar ) !!}</textarea>
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Tags (En - seperated by ",")</label>
@@ -53,7 +53,7 @@
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Tags (Ar - seperated by ",")</label>
-                                <input type="text" name="tags[ar]" class="form-control @if($errors->has('tags.ar')) is-invalid @endif"  value="{{ old('tags.ar' , $object->getTranslation('tags' , 'ar') ) }}">
+                                <input type="text" dir="rtl" name="tags[ar]" class="form-control @if($errors->has('tags.ar')) is-invalid @endif"  value="{{ old('tags.ar' , $object->getTranslation('tags' , 'ar') ) }}">
                             </div>
                             <div class="col-md-6 mt-2">
                                 <label class="form-label">Image *</label>
@@ -102,7 +102,7 @@
 @section('subheader')
     <span class="kt-subheader__breadcrumbs-separator"></span>
     <a href="{{ route('admin:admins.index') }}" class="kt-subheader__breadcrumbs-link">
-        Admins
+        News
     </a>
 @endsection
 

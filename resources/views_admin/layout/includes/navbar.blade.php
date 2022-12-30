@@ -87,7 +87,7 @@
     <!-- end:: Header -->
     <div class="kt-content  kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor" id="kt_content">
 
-    @hasSection('actionButton')
+
         <!-- begin:: Subheader -->
         <div class="kt-subheader   kt-grid__item" id="kt_subheader">
             <div class="kt-container  kt-container--fluid ">
@@ -105,13 +105,15 @@
 {{--                        <span class="kt-subheader__breadcrumbs-link kt-subheader__breadcrumbs-link--active">Active link</span>--}}
                     </div>
                 </div>
+                @hasSection('actionButton')
                 <div class="kt-subheader__toolbar">
                     <div class="kt-subheader__wrapper">
                         @yield('actionButton')
                     </div>
                 </div>
+                @endif
+
             </div>
         </div>
 
         <!-- end:: Subheader -->
-    @endif

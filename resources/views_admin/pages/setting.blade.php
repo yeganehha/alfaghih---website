@@ -27,11 +27,11 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Website Name (Ar)</label>
-                                        <input type="text" name="name[ar]" value="{{ old('name.ar' , setting('name.ar') ) }}"
+                                        <input type="text" dir="rtl" name="name[ar]" value="{{ old('name.ar' , setting('name.ar') ) }}"
                                                class="form-control @if($errors->has('name.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-9 mt-2">
-                                        <label class="form-label">Light Logo</label>
+                                        <label class="form-label">Light Logo (En)</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control @if($errors->has('logo.light')) is-invalid @endif"
                                                    name="logo[light]" value="{{ old('logo.light' , setting('logo.light') ) }}">
@@ -49,7 +49,7 @@
                                         @endif
                                     </div>
                                     <div class="col-md-9 mt-2">
-                                        <label class="form-label">Dark Logo</label>
+                                        <label class="form-label">Dark Logo (En)</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control @if($errors->has('logo.dark')) is-invalid @endif"
                                                    name="logo[dark]" value="{{ old('logo.dark' , setting('logo.dark') ) }}">
@@ -64,6 +64,42 @@
                                     <div class="col-md-3 mt-5">
                                         @if ( setting('logo.dark' , false) )
                                             <img src="{{ setting('logo.dark') }}" style="max-width: 100%;">
+                                        @endif
+                                    </div>
+                                    <div class="col-md-9 mt-2">
+                                        <label class="form-label">Light Logo (Ar)</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control @if($errors->has('logo.light_ar')) is-invalid @endif"
+                                                   name="logo[light_ar]" value="{{ old('logo.light_ar' , setting('logo.light_ar') ) }}">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                        onclick="event.preventDefault();window.open('/file-manager/fm-button', 'fm', 'width=900,height=600');fmIdSetLink=$(this).parent().parent().find('input').first();">
+                                                    Select
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mt-4 bg-dark pt-3">
+                                        @if ( setting('logo.light_ar' , false) )
+                                            <img src="{{ setting('logo.light_ar') }}" style="max-width: 100%;">
+                                        @endif
+                                    </div>
+                                    <div class="col-md-9 mt-2">
+                                        <label class="form-label">Dark Logo (Ar)</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control @if($errors->has('logo.dark_ar')) is-invalid @endif"
+                                                   name="logo[dark_ar]" value="{{ old('logo.dark_ar' , setting('logo.dark_ar') ) }}">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                        onclick="event.preventDefault();window.open('/file-manager/fm-button', 'fm', 'width=900,height=600');fmIdSetLink=$(this).parent().parent().find('input').first();">
+                                                    Select
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 mt-5">
+                                        @if ( setting('logo.dark_ar' , false) )
+                                            <img src="{{ setting('logo.dark_ar') }}" style="max-width: 100%;">
                                         @endif
                                     </div>
                                     <div class="col-md-9 mt-2">
@@ -91,7 +127,7 @@
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">SEO Keyword (Ar)</label>
-                                        <input type="text" name="keyword[ar]" value="{{ old('keyword.ar' , setting('keyword.ar') ) }}"
+                                        <input type="text" dir="rtl" name="keyword[ar]" value="{{ old('keyword.ar' , setting('keyword.ar') ) }}"
                                                class="form-control @if($errors->has('keyword.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-12 mt-2">
@@ -101,7 +137,7 @@
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">SEO Description (Ar)</label>
-                                        <input type="text" name="description[ar]" value="{{ old('description.ar' , setting('description.ar') ) }}"
+                                        <input type="text" dir="rtl" name="description[ar]" value="{{ old('description.ar' , setting('description.ar') ) }}"
                                                class="form-control @if($errors->has('description.ar')) is-invalid @endif">
                                     </div>
                                     <div class="col-md-12 mt-2">
@@ -115,7 +151,7 @@
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">Copyright Footer (Ar)</label>
-                                        <input type="text" name="copyright[ar]" value="{{ old('copyright.ar' , setting('copyright.ar') ) }}"
+                                        <input type="text" dir="rtl" name="copyright[ar]" value="{{ old('copyright.ar' , setting('copyright.ar') ) }}"
                                                class="form-control @if($errors->has('copyright.ar')) is-invalid @endif">
                                     </div>
                                 </div>
@@ -149,7 +185,7 @@
                                     </div>
                                     <div class="col-md-6 mt-2">
                                         <label class="form-label">Address (Ar)</label>
-                                        <textarea  name="address[ar]" class="form-control @if($errors->has('address.ar')) is-invalid @endif">{{ old('address.ar' , setting('address.ar') ) }}</textarea>
+                                        <textarea  name="address[ar]" dir="rtl" class="form-control @if($errors->has('address.ar')) is-invalid @endif">{{ old('address.ar' , setting('address.ar') ) }}</textarea>
                                     </div>
                                     <div class="col-md-12 mt-2">
                                         <label class="form-label">Location</label>
@@ -166,6 +202,11 @@
                                         <label class="form-label">Phone number</label>
                                         <input type="text" class="form-control @if($errors->has('phone')) is-invalid @endif"
                                                name="phone" value="{{ old('phone' , setting('phone') ) }}">
+                                    </div>
+                                    <div class="col-md-6 mt-2">
+                                        <label class="form-label">Whats app number</label>
+                                        <input type="text" class="form-control @if($errors->has('Whats_app')) is-invalid @endif"
+                                               name="Whats_app" value="{{ old('Whats_app' , setting('Whats_app') ) }}">
                                     </div>
                                     <div class="col-md-12 mt-5">
                                         <h1>Social Links</h1>
@@ -240,7 +281,7 @@
             z-index: 90 !important;
         }
         .leaflet-top, .leaflet-bottom {
-            z-index: 95 !important;
+            z-index: 92 !important;
         }
     </style>
 @endsection

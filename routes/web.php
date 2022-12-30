@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class , 'index'])->name('index');
 
-Auth::routes();
+Route::get('/about_us', function () { return view('about_us');})->name('about_us');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/services', [HomeController::class , 'services'])->name('services');
+
+Route::get('/our_team', function () { return view('our_team');})->name('our_team');
+
+Route::get('/clients',  [HomeController::class , 'clients'])->name('clients');
+
+Route::get('/partners', [HomeController::class , 'partners'])->name('partners');
+
+Route::get('/news_events',[HomeController::class , 'newspaper'])->name('news_events');
+Route::get('/news_events/{newspaper}',[HomeController::class , 'news'])->name('news');
+
+Route::view('/consultation','consultation')->name('consultation');
+Route::view('/contact_us','contact_us')->name('contact_us');
+
+
+Route::get('/change/locale/{locale}', function ($locale) {
+    app()->setLocale($locale);
+    session()->put('locale', $locale);
+    return redirect()->back();
+})->where(['locale'=>('en|ar')])->name('change_locale')->withoutMiddleware('language');

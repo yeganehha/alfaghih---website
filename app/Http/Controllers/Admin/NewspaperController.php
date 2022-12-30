@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Newspaper\StoreNewspaperRequest;
-use App\Http\Requests\Newspaper\UpdateNewspaperRequest;
-use App\Models\Admin;
+use App\Http\Requests\Admin\Newspaper\StoreNewspaperRequest;
+use App\Http\Requests\Admin\Newspaper\UpdateNewspaperRequest;
 use App\Models\Newspaper;
 
 class NewspaperController extends Controller
@@ -40,7 +39,7 @@ class NewspaperController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\Newspaper\StoreNewspaperRequest  $request
+     * @param  \App\Http\Requests\Admin\Newspaper\StoreNewspaperRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
     public function store(StoreNewspaperRequest $request)
@@ -67,7 +66,7 @@ class NewspaperController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\Newspaper\UpdateNewspaperRequest  $request
+     * @param  \App\Http\Requests\Admin\Newspaper\UpdateNewspaperRequest  $request
      * @param  \App\Models\Newspaper  $newspaper
      * @return \Illuminate\Http\RedirectResponse
      */
